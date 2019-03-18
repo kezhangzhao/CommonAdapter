@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //添加分割线
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this, 0.5f));
         recyclerView.setAdapter(new CommonRvAdapter<String>(this, R.layout.item_acitivity_main, data) {
 
