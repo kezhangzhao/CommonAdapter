@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ListView
+        android:id="@+id/lv_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:divider="@color/line_color"
+        android:dividerHeight="0.5dp"
+        android:overScrollMode="never" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rc_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+</LinearLayout>
