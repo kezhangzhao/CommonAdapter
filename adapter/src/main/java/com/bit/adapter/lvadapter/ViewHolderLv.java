@@ -160,6 +160,12 @@ public class ViewHolderLv {
         return this;
     }
 
+    public ViewHolderLv setVisiOrInvisi(int viewId, boolean visible) {
+        View view = getView(viewId);
+        view.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        return this;
+    }
+
     public ViewHolderLv linkify(int viewId) {
         TextView view = getView(viewId);
         Linkify.addLinks(view, Linkify.ALL);

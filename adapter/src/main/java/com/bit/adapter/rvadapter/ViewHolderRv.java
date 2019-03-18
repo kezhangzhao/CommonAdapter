@@ -154,6 +154,12 @@ public class ViewHolderRv extends RecyclerView.ViewHolder {
         return this;
     }
 
+    public ViewHolderRv setVisiOrInvisi(int viewId, boolean visible) {
+        View view = getView(viewId);
+        view.setVisibility(visible ? View.VISIBLE : View.INVISIBLE);
+        return this;
+    }
+
     public ViewHolderRv linkify(int viewId) {
         TextView view = getView(viewId);
         Linkify.addLinks(view, Linkify.ALL);
