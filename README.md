@@ -1,5 +1,9 @@
 # CommonAdapter
 ListView和RecyclerView的封装adapter。RecyclerView的分割线
+# 处理ScrollView滑动冲突
+1.CustomGridView（处理的是GridView）
+1.CustomListView（处理的是ListView）
+1.CustomRecyclerView（处理的是RecyclerView）
 # 依赖方式
 	allprojects {
 		repositories {
