@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import com.bit.adapter.rvadapter.base.ItemViewDelegate;
 import com.bit.adapter.rvadapter.base.ItemViewDelegateManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolderRv> {
+
     protected Context mContext;
     protected List<T> mDatas;
 
@@ -47,7 +49,7 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolderRv> 
 
     }
 
-    public void convert(ViewHolderRv holder, T t,int position) {
+    public void convert(ViewHolderRv holder, T t, int position) {
         mItemViewDelegateManager.convert(holder, t, position);
     }
 
@@ -76,7 +78,7 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolderRv> 
 
     @Override
     public void onBindViewHolder(ViewHolderRv holder, int position) {
-        convert(holder, mDatas.get(position),position);
+        convert(holder, mDatas.get(position), position);
 
     }
 
@@ -86,8 +88,28 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolderRv> 
     }
 
 
+    public void addData(T data) {
+        if (data != null) {
+            if (mDatas == null)
+                mDatas = new ArrayList<>();
+            mDatas.add(data);
+        }
+    }
+
+    public void addAllDatas(List<T> dataList) {
+        if (dataList != null && dataList.size() > 0) {
+            if (mDatas == null)
+                mDatas = new ArrayList<>();
+            mDatas.addAll(dataList);
+        }
+    }
+
     public List<T> getDatas() {
         return mDatas;
+    }
+
+    public void setmDatas(List<T> mDatas) {
+        this.mDatas = mDatas;
     }
 
     public MultiItemTypeAdapter addItemViewDelegate(ItemViewDelegate<T> itemViewDelegate) {

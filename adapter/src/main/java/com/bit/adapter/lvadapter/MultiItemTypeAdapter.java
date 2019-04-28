@@ -10,11 +10,13 @@ import android.widget.BaseAdapter;
 import com.bit.adapter.lvadapter.base.ItemViewDelegate;
 import com.bit.adapter.lvadapter.base.ItemViewDelegateManager;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MultiItemTypeAdapter<T> extends BaseAdapter {
+
     protected Context mContext;
     protected List<T> mDatas;
     private Map<String, ViewHolderLv> viewHolderMaps;
@@ -99,5 +101,29 @@ public class MultiItemTypeAdapter<T> extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return position;
+    }
+
+    public void addData(T data) {
+        if (data != null) {
+            if (mDatas == null)
+                mDatas = new ArrayList<>();
+            mDatas.add(data);
+        }
+    }
+
+    public void addAllDatas(List<T> dataList) {
+        if (dataList != null && dataList.size() > 0) {
+            if (mDatas == null)
+                mDatas = new ArrayList<>();
+            mDatas.addAll(dataList);
+        }
+    }
+
+    public List<T> getmDatas() {
+        return mDatas;
+    }
+
+    public void setmDatas(List<T> mDatas) {
+        this.mDatas = mDatas;
     }
 }

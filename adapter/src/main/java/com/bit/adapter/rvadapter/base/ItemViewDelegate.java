@@ -3,8 +3,7 @@ package com.bit.adapter.rvadapter.base;
 
 import com.bit.adapter.rvadapter.ViewHolderRv;
 
-public interface ItemViewDelegate<T>
-{
+public interface ItemViewDelegate<T> {
 
     int getItemViewLayoutId();
 
